@@ -1,0 +1,35 @@
+#include <pthread.h>
+
+https://github.com/okeeffed/cheat-sheets/blob/master/COMP3520-OS/Pthread.md
+
+Pthreads:-
+    POSIX is a family of standards, specified by the IEEE, to clarify and make uniform the application programming interfaces 
+    (and ancillary issues, such as commandline shell utilities) provided by Unix-y operating systems.
+
+    POSIX threads or Pthreads are one implementation of threads concept used with C program on Unix. 
+    Pthreads are defined as a set of C language programming types and procedure calls, 
+    implemented with a pthread.h header/include file and a thread library.
+
+    Features:- 
+    1) Thread Management
+    2) Mutexes
+    3) Condition Variables
+
+1) Thread Management
+    1) pthread_create(thread, attr, startRoutine, arg) : returns 0, if sucessful or error number is generated.
+    2) pthread_attr_init(attr) & pthread_attr_destroy(attr) : used to initialize/destroy the thread attribute object
+    3) pthread_exit(status) : used to explicitly exit the thread, may optionaly specify a termination status, 
+                              which is stored as a void pointer for any thread that may join the calling thread.
+    4) pthread_join(threadid, status) : blocks the calling thread until the specified threadid thread terminates
+    5) pthread_detach(threadit, status) : ????
+    6) sched_yield() : force the running thread to relinquish the processor until it again becomes the head of its thread list.
+    
+2) Mutexes
+    1) pthread_mutex_init(&pthread_mutex_t, NULL) : returns 0 if mutex is successfully completed.
+    2) pthread_mutex_lock(&pthread_mutex_t) : locks mutex, or and if already locked, the calling thread shall block 
+                                              until the mutex becomes available.
+    3) pthread_mutex_unlock(&pthread_mutex_t) : unlocks mutex (further allowing someone else or itself to lock it again).
+    4) pthread_mutex_trylocK(&pthread_mutex_t) : tries to lock mutex, returns 0 if sucessfully, else returns -1.
+    5) sem_init(&sem_t, 0, init_value) : initialise a semaphore with initial value 'init_value'.
+    6) sem_wait(&sem_t) : decrement semaphore value, if semaphore is 0, then wait until it is incremented.
+    7) sme_post(&sem_t) : increment semaphore value.

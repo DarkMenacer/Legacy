@@ -1,0 +1,14 @@
+IN DATA STRUCTURES
+  *) Stack using linked list
+
+  *) Queue using linked list
+
+  *) Breadth First Search Adjacency list
+
+  *) Depth First Seach Adjacency list
+
+  *) Prims' Algorithm
+
+  *) Dijksktra's Algorithm
+
+  *) Add Menu to all codes

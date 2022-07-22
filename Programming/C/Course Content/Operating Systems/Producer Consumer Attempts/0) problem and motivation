@@ -1,0 +1,27 @@
+****** PRODUCER CONSUMER PROBLEM
+
+Problem statement:-
+    We consider two processes, which are called the 'producer' and the 'consumer' respectively. 
+    The producer is a cyclic process and each time it goes through its cycle it produces a certain portion of information, 
+    that has to be processed by the consumer. The consumer is also a cyclic process and each time it goes through its cycle, 
+    it can process the next portion of information, as has been produced by the producer ... 
+    We assume the two processes to be connected for this purpose via a buffer with unbounded capacity
+
+Description Template of each attempt to solve:-
+/*
+    Date:- 
+    Name of the approach:-
+    Feature:-
+    One line description:- 
+    How it beats its predecessor:- 
+    Points of failure:- 
+
+    Explanation:-
+    
+*/
+    
+Chronological order
+    1. 
+    2. 
+
+NOTE: Use control-C (^C) to terminate the code

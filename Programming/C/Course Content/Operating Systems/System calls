@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+http://www.cheat-sheets.org/saved-copy/Linux_Syscall_quickref.pdf
+
+System call:
+    A system call is a procedure that provides the interface between a process and the operating system. 
+    It is the way by which a computer program requests a service from the kernel of the operating system
+
+    Types of System calls:
+    1) Process Control
+    2) File Management
+    3) Device Management
+    4) Information Maintenance
+    5) Communication
+
+1) Process Control:
+    1) fork() : creates child process, returns 0 in child process and pID of child in parent process
+    2) exit(status) : terminate process execution, returns status
+    3) waitpid(pID, &staloc, options) : wait for a child to terminate, returns ????
+    4) execve(name,argv,environp) : ????
+
+2) File Management:
+    1) ???
+
+3) Device Management:
+    1) ???
+
+4) Information Maintenance:
+    1) getpid(): returns the process ID of calling process
+    2) sleep(): suspends the execution of currently running process for some interval of time

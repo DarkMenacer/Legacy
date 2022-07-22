@@ -1,0 +1,36 @@
+#Editor config files 
+.vscode
+.DS_Store
+
+#Temporary placeholders
+test
+test2
+test3
+test4
+test5
+test.c
+test2.c
+test3.c
+test4.c
+test5.c
+test.cpp
+test2.cpp
+test3.cpp
+test4.cpp
+test5.cpp
+test.py
+test2.py
+test3.py
+test4.py
+test5.py
+A
+A.cpp
+B
+B.cpp
+C.cpp
+D
+D.cpp
+E
+E.cpp
+F
+F.cpp

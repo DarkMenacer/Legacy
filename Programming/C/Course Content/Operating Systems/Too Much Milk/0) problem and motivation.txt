@@ -1,0 +1,31 @@
+****** TOO MUCH MILK/TOO LESS MILK
+
+Problem statement:-
+    Jack and Jill are newlywed couple. Both of them are avid milk lovers. 
+    But they are oddly peculiar about the quantity of milk left at the end of each day.
+    They need their daily dose of milk everyday. Hence if milk is not sufficient for both of them,
+    they will go individually to the market and buy certain amount of milk.
+    But whatever happens, they don't want the quantity of milk to exceed a certain amount because the extra milk is spoiled.
+    While they are adjusting to the lifestyle of their spouses, milk is a sensitive issue and mistakes are unforgivable.
+    If any of the above two cases happen to occur(too much milk or too less milk), they will divorce each other without second thoughts.
+    You are their mutual friend and care about them and want to avoid their split at all costs.
+
+Refer 'https://www.cs.unc.edu/~porter/courses/comp530/f20/slides/toomuchmilk.pdf' for more details.
+
+Description Template of each attempt to solve:-
+
+/*
+    Date:- 
+    Name of the approach:-
+    Feature:-
+    One line description:- 
+    How it beats its predecessor:- 
+    Points of failure:- 
+
+    Explanation:-
+
+    NOTE: Run multiple times if the mentioned points of failure are not incurred.
+    
+*/
+    
+NOTE: Run multiple times if the mentioned points of failure are not incurred.
