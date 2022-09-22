@@ -1,10 +1,10 @@
 # Counting Towers
 ### Problem Info
-Platform:- CSES: Dynamic Programming
-Date:- 13 September 2022
-Type of Problem:- Mathematically modelling, Dynamic Programming
-Complexity:- O(n)
-Status:- Solved
+- Platform:- CSES: Dynamic Programming
+- Date:- 13 September 2022
+- Type of Problem:- Mathematically modelling, Dynamic Programming
+- Complexity:- O(n)
+- Status:- Solved
 
 ### Solution in Brief
 The first thing to be done in such a question is to setup a model to encode blocks.
