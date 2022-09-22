@@ -11,12 +11,12 @@ The first thing to be done in such a question is to setup a model to encode bloc
 The best way to encode is to use the intersection point (middle point) of a 2x2 block
 There are 8 possible combinations:-
 
-![[8_blocks.png]]
+![8_blocks.png](https://github.com/DarkMenacer/Legacy/blob/main/Programming/C%2B%2B/Submissions/CSES/Dynamic%20Programming/Counting%20Towers/8_blocks.png)
 
 It must be noted that all towers can be represented using the above 8 blocks
 For eg:-
 
-![[Example_block.png]]
+![Example_block.png](https://github.com/DarkMenacer/Legacy/blob/main/Programming/C%2B%2B/Submissions/CSES/Dynamic%20Programming/Counting%20Towers/Example_block.png)
 
 This block is {6, 2}, i.e first intersection from bottom is of type 6 and one above that is type 2.
 Now that the towers are encoded, it is realised that not all encodings can exist i.e.
