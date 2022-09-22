@@ -39,23 +39,27 @@ As 1,2,3,4,5 are same, that is why they are grouped into Group G1, so are 7,8 in
 Now as 5,6 map to different tops, they are each into different group G2 and G3 respectively.
 Now, finally a 2D memoization table is created 
 
-$$memoize[sizeOfTower][totalGroups]$$
+$$memoize[\text{size of tower}][\text{total groups (=4)}]$$
 
-where total groups = 4
 To understand further working, forget about the groups and try to solve it taking each block seperately for ease.
 
 Following continues the group approach for efficiency.
 
-$$memoize[i][j] = memoize[i-1][{dependsOnTheGroup}]$$
+#### Recursive Condition:-
+$$memoize[i][j] = memoize[i-1][\text{depends on the group}]$$
 
 $\text{if group 1 then [1,2,3,4] + [5] times 4 because 4 blocks in the group}$
+
 $\text{if block 5 then [6] + [7,8]}$
+
 $\text{if block 6 then [1,2,3,4] + [5]}$
+
 $\text{if group 4 then [6] + [7,8] times 2 because 2 blocks in the group}$
 
-Base Condition:-
+#### Base Condition:-
 $memoize[2][G1] = 4 \text{ for 4 blocks}$ 
-$memoize[2][G4] = 2$ and $memoize[2][\text{G2 and G3}] = 1$ similarly
+$memoize[2][G4] = 2$ and 
+$memoize[2][\text{G2 and G3}] = 1$ similarly
 
 Finally the answer is the sum of the last row (that is the no. of blocks that can be formed using all groups at that height).
 
