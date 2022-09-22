@@ -63,7 +63,7 @@ $memoize[2][\text{G2 and G3}] = 1$ similarly
 
 Finally the answer is the sum of the last row (that is the no. of blocks that can be formed using all groups at that height).
 
-#### Sample to understand solution:
+### Sample to understand solution:
 Input:-
 3
 2
