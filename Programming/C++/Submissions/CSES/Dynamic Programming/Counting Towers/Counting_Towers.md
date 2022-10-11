@@ -1,12 +1,13 @@
 # Counting Towers
-### Problem Info
+## Program Info
 - Platform:- CSES: Dynamic Programming
 - Date:- 13 September 2022
 - Type of Problem:- Mathematically modelling, Dynamic Programming
-- Complexity:- O(n)
 - Status:- Solved
+#### Complexity:- O($n$)
 
-### Solution in Brief
+---
+## Solution in Brief
 The first thing to be done in such a question is to setup a model to encode blocks.
 The best way to encode is to use the intersection point (middle point) of a 2x2 block
 There are 8 possible combinations:-
@@ -63,19 +64,19 @@ $memoize[2][\text{G2 and G3}] = 1$ similarly
 
 Finally the answer is the sum of the last row (that is the no. of blocks that can be formed using all groups at that height).
 
-### Sample to understand solution:
-Input:-
+## Sample to understand solution:
+### Input:-
 3
 2
 6
 1337
 
-Output:-
+### Output:-
 8
 2864
 640403945
 
-Explanation:-
+### Explanation:-
 Explained sufficiently in "Solution in brief".
 
 ---
