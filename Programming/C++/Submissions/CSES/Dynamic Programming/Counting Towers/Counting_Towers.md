@@ -4,7 +4,7 @@
 - Date:- 13 September 2022
 - Type of Problem:- Mathematically modelling, Dynamic Programming
 - Status:- Solved
-#### Complexity:- O($n$)
+#### Complexity:- O(n)
 
 ---
 ## Solution in Brief
@@ -67,13 +67,18 @@ Finally the answer is the sum of the last row (that is the no. of blocks that ca
 ## Sample to understand solution:
 ### Input:-
 3
+
 2
+
 6
+
 1337
 
 ### Output:-
 8
+
 2864
+
 640403945
 
 ### Explanation:-

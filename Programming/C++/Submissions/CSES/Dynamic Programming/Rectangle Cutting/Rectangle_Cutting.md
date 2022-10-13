@@ -4,7 +4,7 @@
 - Date:- 11 October 2022
 - Type of Problem:- Dynamic Programming
 - Status:- Solved
-#### Complexity:- O($n^3$)
+#### Complexity:- O(n³)
 ---
 ## Solution in brief
 The first thing to observe is the constraints. Notice how 

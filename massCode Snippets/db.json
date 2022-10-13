@@ -1,0 +1,211 @@
+{
+  "folders": [
+    {
+      "name": "Programming",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "c_cpp",
+      "id": "NpUImf7W",
+      "createdAt": 1663586824003,
+      "updatedAt": 1663589082181,
+      "index": 1
+    },
+    {
+      "name": "CSS",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "css",
+      "id": "DWPRIE3K",
+      "createdAt": 1663586878407,
+      "updatedAt": 1663587706573
+    },
+    {
+      "name": "React",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "V5rB34vu",
+      "createdAt": 1663588766815,
+      "updatedAt": 1663588772741
+    },
+    {
+      "name": "General",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "0mcjDPWZ",
+      "createdAt": 1663589455242,
+      "updatedAt": 1663589461562
+    }
+  ],
+  "snippets": [
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "NpUImf7W",
+      "tagsIds": [
+        "BfXk_HTx"
+      ],
+      "description": "Function to sort a map by value and return it as an vector pair",
+      "name": "Sort a map by value",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "c_cpp",
+          "value": "template <class T1, class T2>\nvector< pair<T1,T2> > sort_map_by_value(map<T1,T2> &input){\n    vector< pair<T1,T2> > sorter(input.begin(),input.end());\n    sort(sorter.begin(),sorter.end(),[](auto &left, auto &right){return left.second < right.second;});\n    return sorter;\n}"
+        }
+      ],
+      "id": "zb9fWLt7",
+      "createdAt": 1663586612327,
+      "updatedAt": 1663589257247
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DWPRIE3K",
+      "tagsIds": [
+        "_t82di2_"
+      ],
+      "description": "To center a div, give it class name \"content_page\" and enclose it in another div with class name \"parent_page\"",
+      "name": "Centering a div",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": ".parent_page{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 100vh;\n    min-width: fit-content;\n    background-color: gainsboro;\n}\n\n.content_page{\n    text-align: center;\n    border: 0.25rem black solid;\n    padding: 4%;\n    margin: 1rem;\n    padding: 1rem;\n    max-width: fit-content;\n    display: block;\n    background-color: lavender;\n} "
+        }
+      ],
+      "id": "TWa8gYcZ",
+      "createdAt": 1663586974106,
+      "updatedAt": 1663589277347
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "V5rB34vu",
+      "tagsIds": [
+        "AAAg14io"
+      ],
+      "description": null,
+      "name": "New React Component",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "import React from \"react\";\n\nconst Name = () => {\n\n\treturn (\n    \t<>\n        </>\n    );\n}\n\nexport default Name;"
+        }
+      ],
+      "id": "Wykdi7_a",
+      "createdAt": 1663588819856,
+      "updatedAt": 1663588989537
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "NpUImf7W",
+      "tagsIds": [],
+      "description": null,
+      "name": "User Driven Menu",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "c_cpp",
+          "value": "#include <iostream>\nusing namespace std;\n\nvoid Menu(){\n    int choice;         // char choice; char *choice;\n    cout<<\"Enter __ to ___\\nEnter __ to ___\\nEnter __ to ___\\n\";\n    cin>>choice;\n    switch(choice /* *choice */){\n        case 1:             //case 'a':  case ___:\n            // Function\n            break;\n        case 2:             //case 'b':  case ___:\n            // Function\n            break;\n    }\n}"
+        }
+      ],
+      "id": "Ru9cD9ri",
+      "createdAt": 1663589063817,
+      "updatedAt": 1663589103840
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "NpUImf7W",
+      "tagsIds": [
+        "b26GUmrf"
+      ],
+      "description": null,
+      "name": "(Old_v1)Program_description",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "/*\nName:- \nPlatform:-\nDate:-\nType of Problem:- \nComplexity:-\nStatus:- \n\nSolution in brief:\n\nSample to understand solution:\nInput:-\n\nOutput:-\n\nExplanation:-\n\n*/"
+        }
+      ],
+      "id": "wwai1qCC",
+      "createdAt": 1663589157997,
+      "updatedAt": 1665488594049
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "0mcjDPWZ",
+      "tagsIds": [
+        "b26GUmrf"
+      ],
+      "description": null,
+      "name": "SuperScripts and Subscripts",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "Superscripts:\n    ¹²³⁴⁵⁶⁷⁸⁹⁰\n    ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ\n\nSubscripts\n    ₀₁₂₃₄₅₆₇₈₉\n    ₐ ₑ ₕ ᵢ ⱼ ₖ ₗ ₘ ₙ ₒ ₚ ᵣ ₛ ₜ ᵤ ᵥ ₓ\n    ₌"
+        }
+      ],
+      "id": "QjTrgTNX",
+      "createdAt": 1663589463199,
+      "updatedAt": 1663589495534
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "NpUImf7W",
+      "tagsIds": [
+        "b26GUmrf"
+      ],
+      "description": null,
+      "name": "Program_description",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "markdown",
+          "value": "# Name of the program\n## Program Info\n- Platform/Source:- \n- Date:-\n- Type of Problem:-\n- Status:- \n#### Complexity:- \n---\n## Solution in brief\n\n## Sample to understand the solution\n\n### Input\n\n### Output\n\n### Explanation\n---"
+        }
+      ],
+      "id": "YnnS0w0P",
+      "createdAt": 1665488599426,
+      "updatedAt": 1665491064927
+    }
+  ],
+  "tags": [
+    {
+      "name": "ReactJS",
+      "id": "AAAg14io",
+      "createdAt": 1663588989521,
+      "updatedAt": 1663588989521
+    },
+    {
+      "name": "Function",
+      "id": "BfXk_HTx",
+      "createdAt": 1663589257230,
+      "updatedAt": 1663589257230
+    },
+    {
+      "name": "CSS Snippet",
+      "id": "_t82di2_",
+      "createdAt": 1663589277332,
+      "updatedAt": 1663589277332
+    },
+    {
+      "name": "Meta Data",
+      "id": "b26GUmrf",
+      "createdAt": 1663589318532,
+      "updatedAt": 1663589318532
+    }
+  ]
+}
