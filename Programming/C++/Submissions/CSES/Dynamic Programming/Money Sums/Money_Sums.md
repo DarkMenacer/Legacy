@@ -30,6 +30,7 @@ That is, if current index is possible then so is the sum, current index + next c
 
 ### Explanation
 possible |0 0 1 0 1 1 1 1 1 1  0  1  0 1
-sum      |0 1 2 3 4 5 6 7 8 9 10 11 12 13
+
+____sum|0 1 2 3 4 5 6 7 8 9 10 11 12 13
 
 ---
