@@ -39,7 +39,7 @@ whereas for r, as r can never be smaller than l, it starts as regular but from l
 8
 
 ### Explanation
-![Removal_Game.png](https://github.com/DarkMenacer/Legacy/blob/main/Programming/C%2B%2B/Submissions/CSES/Dynamic%20Programming/Removal%20Game/Removal%20Game.png)
+![Removal_Game.png](https://github.com/DarkMenacer/Legacy/blob/main/Programming/C%2B%2B/Submissions/CSES/Dynamic%20Programming/Removal%20Game/Removal_Game.png)
 
 Diff table:-
 | left/right | 0   | 1   | 2   | 3   |
