@@ -1,4 +1,4 @@
-# Name of the program
+# Removal Game
 ## Program Info
 - Platform/Source:- CSES
 - Date:- 18 October 2022
