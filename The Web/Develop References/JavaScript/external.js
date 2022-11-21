@@ -50,6 +50,8 @@ document.write("<br/><br/>The prices are " + costs)
 
 const convert_name = (item) => {
     h_name = item.name.toUpperCase()
+
+    //Notice the use of  ``` instead of ''', these are template literals and useful for interpolation.
     return `<h4>${h_name}</h4>`
 }
 const big_name = instruments.map(convert_name)
@@ -70,6 +72,7 @@ console.log(instruments.find((temp) => {return temp.price<50}))
 
 
 //object destructing (same can be done with arrays)
+//Note that [] represents Javascript Arrays and {} represents Javascript Objects
 const Piano = {
     owns: "Korg G1 Air",
     details:{

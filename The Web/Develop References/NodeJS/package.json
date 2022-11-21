@@ -1,0 +1,14 @@
+{
+  "name": "darkmenacer_node_express_tutorials",
+  "version": "1.0.0",
+  "description": "NodeJS and ExpressJS Codes for my future reference, Feel free to browse them! :-)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DarkMenacer",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
+}
