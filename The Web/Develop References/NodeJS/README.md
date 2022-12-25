@@ -11,3 +11,10 @@
    2. from_database
    3. *missing file streams section
 3. Express
+   1. understanding_need
+   2. using_express
+   3. get
+   4. middleware
+   5. postman
+   6. express_router
+   7. safari
