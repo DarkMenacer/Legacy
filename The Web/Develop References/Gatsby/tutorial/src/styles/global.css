@@ -1,0 +1,85 @@
+.cover{
+    width: 5rem;
+    height: 5rem;
+    background-color: lightblue;
+}
+
+.bell{
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: yellow;
+}
+
+.bell:active{
+    background-color: red;
+}
+
+.centering{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.small-text{
+    font-size:x-small;
+    inline-size: 5rem;
+    border: 0.05rem black solid;
+    text-align: center;
+}
+
+.small-text-2{
+    font-size: x-small;
+    inline-size: 15rem;
+    text-align: center;
+}
+
+.background_set{
+    background-color: gainsboro;
+    height: 85vh;
+}
+
+.friend-list{
+    text-align: center;
+    margin: 1rem;
+    border: 0.05rem black solid;
+}
+
+.friend-name{
+    background-color: lawngreen;
+    width: 3rem;
+    margin: 0.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 10%;
+}
+
+.contact-card{
+    border: 0.25rem black solid;
+    padding: 2rem 2rem 0.5rem;
+    border-radius: 10%;
+    background-color: aliceblue;
+}
+
+.head-foot{
+    /* style={{padding: '0.5rem',margin:'0',textAlign:'center', border:'0.2rem solid black'}} */
+    padding: 0.5rem;
+    margin: 0;
+    text-align: center;
+}
+
+.mail{
+    padding: 1rem;
+}
+
+.mail > label{
+    padding-right: 1rem;
+}
+
+.mail > textarea{
+    width: 17rem;
+    height: 5rem;
+}
+
+.big-ft {
+    font-size: large;
+}
