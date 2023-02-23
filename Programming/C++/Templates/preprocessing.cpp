@@ -29,6 +29,7 @@ using namespace std;
 #define take_indexed_loop_input(name,size) for(int i=1;i<size+1;++i){int x;cin>>x;name.push_back(make_pair(x,i));}
 #define here cout<<"here\n"
 #define display(name) for(auto it: name){cout<<it<<" ";}cout<<"\n"
+#define display_2d(name, x, y) for(int i=0;i<x;++i){for(int j=0;j<y;++j){cout<<name[i][j]<<" ";}cout<<'\n';}
 #define what_is_here(name) cout<<#name<<": "<<name<<"\n"
 
 //*) general purpose
@@ -54,6 +55,3 @@ using namespace std;
 
 #define free_cin cin.sync_with_stdio(false)
 #define free_cout cout.sync_with_stdio(false)
-
-//Whatever this is
-int32_t mod = 1e9 + 7;

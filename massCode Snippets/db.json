@@ -9,7 +9,7 @@
       "id": "NpUImf7W",
       "createdAt": 1663586824003,
       "updatedAt": 1663589082181,
-      "index": 1
+      "index": 0
     },
     {
       "name": "CSS",
@@ -19,7 +19,8 @@
       "defaultLanguage": "css",
       "id": "DWPRIE3K",
       "createdAt": 1663586878407,
-      "updatedAt": 1663587706573
+      "updatedAt": 1663587706573,
+      "index": 1
     },
     {
       "name": "React",
@@ -29,7 +30,8 @@
       "defaultLanguage": "plain_text",
       "id": "V5rB34vu",
       "createdAt": 1663588766815,
-      "updatedAt": 1663588772741
+      "updatedAt": 1663588772741,
+      "index": 2
     },
     {
       "name": "General",
@@ -39,7 +41,19 @@
       "defaultLanguage": "plain_text",
       "id": "0mcjDPWZ",
       "createdAt": 1663589455242,
-      "updatedAt": 1663589461562
+      "updatedAt": 1663589461562,
+      "index": 3
+    },
+    {
+      "name": "Archive",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "cgK6RP7u",
+      "createdAt": 1676567754209,
+      "updatedAt": 1676567759246,
+      "index": 6
     }
   ],
   "snippets": [
@@ -180,6 +194,98 @@
       "id": "YnnS0w0P",
       "createdAt": 1665488599426,
       "updatedAt": 1665491064927
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "NpUImf7W",
+      "tagsIds": [
+        "mAoiLPD_"
+      ],
+      "description": null,
+      "name": "Common Macros",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "c_cpp",
+          "value": "#define all(name) name.begin(),name.end()\n#define ll long long\n#define INF 1e9\n#define take_loop_input_in(name,size) for(int i=0;i<size;++i){cin>>name[i];}\n#define take_indexed_loop_input(name,size) for(int i=1;i<size+1;++i){int x;cin>>x;name.push_back(make_pair(x,i));}\n#define here cout<<\"here\\n\"\n#define display(name) cout<<#name<<\": \";for(auto it: name){cout<<it<<\" \";}cout<<\"\\n\"\n#define display_2d(name, x, y) for(int i=0;i<x;++i){for(int j=0;j<y;++j){cout<<name[i][j]<<\" \";}cout<<'\\n';}\n#define what_is_here(name) cout<<#name<<\": \"<<name<<\"\\n\"\n#define free_cin cin.sync_with_stdio(false)\n#define free_cout cout.sync_with_stdio(false)"
+        }
+      ],
+      "id": "y3Y0c3ni",
+      "createdAt": 1666094666274,
+      "updatedAt": 1676997932176
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "cgK6RP7u",
+      "tagsIds": [],
+      "description": null,
+      "name": "Programming Deck CSES Template",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "html",
+          "value": "Name<br><a href=\"https://cses.fi/problemset/task/number\">https://cses.fi/problemset/task/number</a>\n\n\n<h5> Key Concept used: FILL</h5>\n<h5>\n  Solution: <a href=\"https://github.com/DarkMenacer/Legacy/blob/main/Programming/C%2B%2B/Submissions/CSES/Sorting%20and%20Searching/Restaurant%20Customers/Restaurant_Customers.md\">Guide</a> and <a href=\"\">Code</a>\n</h5>\n<hr>"
+        }
+      ],
+      "id": "P0SYUmv-",
+      "createdAt": 1666435992243,
+      "updatedAt": 1676567764092
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": ""
+        }
+      ],
+      "id": "74Qak-4w",
+      "createdAt": 1667375623049,
+      "updatedAt": 1676567777000
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "cgK6RP7u",
+      "tagsIds": [],
+      "description": null,
+      "name": "Movie/TV Show Review",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "markdown",
+          "value": "# Part/Season x\n\n### Experiencing the show/album/game...\n<!---How you felt experiencing the media-->\n\n### The theme it revolves around\n\n### The thoughts I had during and after completing it\n\n### Negatives\n\n### Ratings:"
+        }
+      ],
+      "id": "GvRXCavg",
+      "createdAt": 1667375639945,
+      "updatedAt": 1676567771499
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "DWPRIE3K",
+      "tagsIds": [],
+      "description": null,
+      "name": "tailwind center",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": ""
+        }
+      ],
+      "id": "uiLfSYVJ",
+      "createdAt": 1674909511922,
+      "updatedAt": 1674909517808
     }
   ],
   "tags": [
@@ -206,6 +312,12 @@
       "id": "b26GUmrf",
       "createdAt": 1663589318532,
       "updatedAt": 1663589318532
+    },
+    {
+      "name": "Macros",
+      "id": "mAoiLPD_",
+      "createdAt": 1666094697212,
+      "updatedAt": 1666094697212
     }
   ]
 }

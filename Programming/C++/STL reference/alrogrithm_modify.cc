@@ -4,7 +4,7 @@
 /*
  * Algorithm Walkthrough: 
  *   Value-changing Algorithm - Changes the element values
- *   copy, move, transform, swap, fill, replace, remove
+ *   copy, move, transform, swap, fill, replace, remove, insert
  */
 
 vector<int> vec = {9,60,70,8,45,87,90};     // 7 items
@@ -158,7 +158,11 @@ unique_copy(vec.begin(), vec.end(), vec2.begin());
 	
 
 
-
+// 8. Insert
+vector<int> a {0,1,2,3,4};
+vector<int> b {5,6,7,8,9};
+a.insert(a.end(), b.begin(), b.end());
+//a: {0,1,2,3,4,5,6,7,8,9}
 
 
 

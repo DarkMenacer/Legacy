@@ -4,6 +4,7 @@
 
 #Temporary placeholders
 test
+testleetcode
 test2
 test3
 test4
@@ -23,6 +24,8 @@ test2.py
 test3.py
 test4.py
 test5.py
+test.md
+testleetcode.cpp
 A
 A.cpp
 B
@@ -34,3 +37,13 @@ E
 E.cpp
 F
 F.cpp
+test_input
+test2_input
+test3_input
+test4_input
+test5_input
+A_input
+B_input
+C_input
+D_input
+E_input
