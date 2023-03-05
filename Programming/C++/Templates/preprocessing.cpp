@@ -31,6 +31,7 @@ using namespace std;
 #define display(name) for(auto it: name){cout<<it<<" ";}cout<<"\n"
 #define display_2d(name, x, y) for(int i=0;i<x;++i){for(int j=0;j<y;++j){cout<<name[i][j]<<" ";}cout<<'\n';}
 #define what_is_here(name) cout<<#name<<": "<<name<<"\n"
+#define nl cout<<'\n'
 
 //*) general purpose
 #define FOR(i,start,upper_limit) for(i=start;i<upper_limit;++i)
@@ -49,9 +50,11 @@ using namespace std;
 #define p pair
 
 //*) debugging
-#define nl cout<<'\n'
 #define display_paired(name) for(auto it: name){cout<<it.first<<"("<<it.second<<") ";}cout<<"\n"
 #define display_2d(name, x, y) for(int i=0;i<x;++i){for(int j=0;j<y;++j){cout<<name[i][j]<<" ";}cout<<'\n';}
+#define duration clock_t tStart = clock();cerr<<fixed<<"\nTime Taken: "<<(double)(clock()- tStart)/CLOCKS_PER_SEC<<endl;
 
+//*) Customising compiler
 #define free_cin cin.sync_with_stdio(false)
 #define free_cout cout.sync_with_stdio(false)
+#define fastIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);

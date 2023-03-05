@@ -208,12 +208,12 @@
         {
           "label": "Fragment 1",
           "language": "c_cpp",
-          "value": "#define all(name) name.begin(),name.end()\n#define ll long long\n#define INF 1e9\n#define take_loop_input_in(name,size) for(int i=0;i<size;++i){cin>>name[i];}\n#define take_indexed_loop_input(name,size) for(int i=1;i<size+1;++i){int x;cin>>x;name.push_back(make_pair(x,i));}\n#define here cout<<\"here\\n\"\n#define display(name) cout<<#name<<\": \";for(auto it: name){cout<<it<<\" \";}cout<<\"\\n\"\n#define display_2d(name, x, y) for(int i=0;i<x;++i){for(int j=0;j<y;++j){cout<<name[i][j]<<\" \";}cout<<'\\n';}\n#define what_is_here(name) cout<<#name<<\": \"<<name<<\"\\n\"\n#define free_cin cin.sync_with_stdio(false)\n#define free_cout cout.sync_with_stdio(false)"
+          "value": "#define all(name) name.begin(),name.end()\n#define ll long long\n#define INF 1e9\n#define take_loop_input_in(name,size) for(int i=0;i<size;++i){cin>>name[i];}\n#define take_indexed_loop_input(name,size) for(int i=1;i<size+1;++i){int x;cin>>x;name.push_back(make_pair(x,i));}\n#define here cout<<\"here\\n\"\n#define display(name) cout<<#name<<\": \";for(auto it: name){cout<<it<<\" \";}cout<<\"\\n\"\n#define display_2d(name, x, y) for(int i=0;i<x;++i){for(int j=0;j<y;++j){cout<<name[i][j]<<\" \";}cout<<'\\n';}\n#define what_is_here(name) cout<<#name<<\": \"<<name<<\"  \"\n#define nl cout<<'\\n'\n#define free_cin_cout cin.sync_with_stdio(false);cout.sync_with_stdio(false)\n#define fastIO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);\n#define duration clock_t tStart = clock();cerr<<fixed<<\"\\nTime Taken: \"<<(double)(clock()- tStart)/CLOCKS_PER_SEC<<endl;\n"
         }
       ],
       "id": "y3Y0c3ni",
       "createdAt": 1666094666274,
-      "updatedAt": 1676997932176
+      "updatedAt": 1677919783156
     },
     {
       "isDeleted": false,
