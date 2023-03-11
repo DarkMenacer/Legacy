@@ -4,7 +4,7 @@ Platform:-          CSES
 Date:-              27 January 2022
 Type of Problem:-   Number Theory, Searching
 Complexity:-        O(n)
-Status:-            Solved
+Status:-            Solved (But will need to be resolved because of Josephus-II)
 
 Solution in brief:
 
