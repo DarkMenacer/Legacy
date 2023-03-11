@@ -1,36 +1,3 @@
-/*
-Name:-              Grid Paths
-Platform:-          CSES
-Date:-              14 August 2022
-Type of Problem:-   Dynamic Programming
-Complexity:-        O(n³)
-Status:-            Solved
-
-Solution in brief:
-There are only 2 ways to visit a square, from top or from the left.
-Therefore no. of ways of visit grid[x][y] = no. of ways of visit grid[x-1][y] + no. of ways of visit grid[x][y-1]
-Now using memoization and safeguarding boundary cases, the answer for the bottom left square is obtained.
-
-Sample to understand solution:
-Input:-
-4
-....
-.*..
-...*
-*...
-
-Output:-
-3
-
-Explanation:-
-Memoized table:-
-1 1 1 1 
-1 0 1 2 
-1 1 2 0 
-0 1 3 3 
-
-
-*/
 #include <iostream>
 #include <vector>
 using namespace std;

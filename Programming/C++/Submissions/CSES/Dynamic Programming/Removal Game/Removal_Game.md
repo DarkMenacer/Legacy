@@ -23,7 +23,7 @@ Now, it can be observed that the difference between one and two matters for inte
 
 Generalising above approach for calculating the difference of values from interval l to r:
 
-$$diff[l][r] = max(value[l] - diff[l+1][r], value[r]- diff[l][r-1])$$
+$$\text{diff}[l][r] = \text{max}(\text{value}[l] - \text{diff}[l+1][r], \text{value}[r]- \text{diff}[l][r-1])$$
 
 Consider how to form a top-down approach, to calculate diff[**l**][r] we need diff[**l+1**][r] so l starts from n-1 to 0 
 whereas for r, as r can never be smaller than l, it starts as regular but from l to n-1.

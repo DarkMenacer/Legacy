@@ -1,32 +1,3 @@
-/*
-Name:-              Removing Digits
-Platform:-          CSES
-Date:-              14 August 2022
-Type of Problem:-   Dynamic Programming
-Complexity:-        O(n (log(n))² )
-Status:-            Solved
-
-Solution in brief:
-For each number x,
-memoize[x] = min(memoize[x-c₁], memoize[x-c₂], ...) + 1
-where c₁, c₂ are the digits in x
-
-Sample to understand solution:
-Input:-
-13
-
-Output:-
-3
-
-Explanation:-
-14 = {1,4}
-memoize[14] = min(memoize[13], memoize[10]) + 1
-memoize[10] = min(memoize[9], memoize[10]) + 1
-memoize[9] = 1
-so memoize[10] = 2
-similarly memoize[13] = 3
-
-*/
 #include <iostream>
 #include <vector>
 #include <cmath>

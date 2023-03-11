@@ -27,13 +27,13 @@ Finally the number of nodes with value $\frac{n(n+1)}{4}$ are counted and that i
 This was the bottom-up approach. To implement this using top-down approach
 
 Memoization table is constructed with rows as numbers and columns as the sum.
-$memoize[i][j]$ represents the number of ways of constructing sum $j$ using $i$ (first) numbers.
-With base criteria $memoize[0][0] = 0$
-$$memoize[i][j] = memoize[i-1][j] + memoize[i-1][j-i]$$
+$\text{memoize}[i][j]$ represents the number of ways of constructing sum $j$ using $i$ (first) numbers.
+With base criteria $\text{memoize}[0][0] = 0$
+$$\text{memoize}[i][j] = \text{memoize}[i-1][j] + \text{memoize}[i-1][j-i]$$
 
-Now for the final answer, if $memoize[n][\text{set sum}]$ is considered then all the sets are counted exactly twice
-but if $memoize[n][\text{set sum} -1]$ is considered then all sets are counted exactly once, (as n has necessarily been placed in other group).
-Therefore the final answer is $\frac{memoize[n][\text{set sum}]}{2} = memoize[n][\text{set sum}-1]$
+Now for the final answer, if $\text{memoize}[n][\text{set sum}]$ is considered then all the sets are counted exactly twice
+but if $\text{memoize}[n][\text{set sum} -1]$ is considered then all sets are counted exactly once, (as n has necessarily been placed in other group).
+Therefore the final answer is $\frac{\text{memoize}[n][\text{set sum}]}{2} = \text{memoize}[n][\text{set sum}-1]$
 
 ## Sample to understand the solution
 

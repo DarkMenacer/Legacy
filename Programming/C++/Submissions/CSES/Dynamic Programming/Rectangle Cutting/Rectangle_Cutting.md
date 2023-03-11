@@ -20,16 +20,16 @@ vs
 (3x3) + (3x3) + (4x4) + (2x2) + (2x2) requires 4 cuts
 
 The only way to find the minimum is to check all possible cuts for given a and b, i.e
-$$solve(a,b) = min(solve(a-1,b) + solve(1,b), solve(a-2,b) + solve(2,b)...) + 1$$
+$$\text{solve}(a,b) = \text{min}(\text{solve}(a-1,b) + \text{solve}(1,b), \text{solve}(a-2,b) + \text{solve}(2,b)...) + 1$$
 Not only about a but also about b, i.e.
-$$solve(a,b) = min(solve(a,b-1) + solve(a,1), solve(a,b-1) + solve(a,2)...) + 1$$
+$$\text{solve}(a,b) = \text{min}(\text{solve}(a,b-1) + \text{solve}(a,1), \text{solve}(a,b-1) + \text{solve}(a,2)...) + 1$$
 with base critera 
-$$solve(i,i) = 0 \text{ }\forall \text{ i}$$ 
+$$\text{solve}(i,i) = 0 \text{ }\forall \text{ i}$$ 
 That is why the solution needs cubic time.
 
 For top-down implementation, memoization table is created with a columns and b rows.
 Element $a_{ij}$ represents the minimum no. of cuts required for a i x j rectangle.
-$$memoize[i][j] = min(memoize[i-k][j]+memoize[k][j], memoize[i][j-k] + memoize[i][k]) + 1 \text{ } \forall \text{ k}$$
+$$\text{memoize}[i][j] = \text{min}(\text{memoize}[i-k][j]+\text{memoize}[k][j], \text{memoize}[i][j-k] + \text{memoize}[i][k]) + 1 \text{ } \forall \text{ k}$$
 
 ## Sample to understand the solution
 ### Input
@@ -39,10 +39,10 @@ $$memoize[i][j] = min(memoize[i-k][j]+memoize[k][j], memoize[i][j-k] + memoize[i
 4
 
 ### Explanation
-$memoize[7][6] = min(memoize[6][6]+memoize[1][6],...,memoize[4][6]+[3][6]...) + 1$
+$\text{memoize}[7][6] = \text{min}(\text{memoize}[6][6]+\text{memoize}[1][6],...,\text{memoize}[4][6]+[3][6]...) + 1$
 
-$memoize[6][6] = 0 \text{ but } memoize[1][6] = 5 \text{ whereas } memoize[4][6] = 2 \text{ and } memoize[3][6] = 1$
+$\text{memoize}[6][6] = 0 \text{ but } \text{memoize}[1][6] = 5 \text{ whereas } \text{memoize}[4][6] = 2 \text{ and } \text{memoize}[3][6] = 1$
 
-Therefore $memoize[7][6] = 4$.
+Therefore $\text{memoize}[7][6] = 4$.
 
 ---
