@@ -3,6 +3,7 @@
 .DS_Store
 
 #Temporary placeholders
+*.swp
 test
 testleetcode
 test2
@@ -47,3 +48,6 @@ B_input
 C_input
 D_input
 E_input
+
+#Log Files
+geckodriver.log

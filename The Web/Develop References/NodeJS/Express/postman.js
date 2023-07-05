@@ -32,13 +32,16 @@ This is how the front-end communicates with app.post (using Fetch API, even axio
     ).then((res) => {console.log(res);alert(res)}); 
 */
 
+// To send other types of data other than json like pdf, docs... a package called 'multer' along with axios is used
+// Multer gives access to req.files which contains the uploaded file. Data is sent from frontend as MIME type of 'multipart/form-data'
+
 app.post('/receive_send_data', (req, res) => {
     const {key1, key2} = req.body //this is how data is taken from front-end
     console.log(key1, key2)
     res.json({message:"Yeah, got it man", sucess:true})
 })
 
-//There's also app.put() and app.delete() used to update and delete respectively 
+//There's also app.put(), app.patch() and app.delete() used to update all of, update part of and delete data respectively 
 //but same can be done by post as well
 
 app.listen(5005, (req, res) => {

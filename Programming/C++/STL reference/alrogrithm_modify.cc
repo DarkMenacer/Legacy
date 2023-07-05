@@ -4,7 +4,7 @@
 /*
  * Algorithm Walkthrough: 
  *   Value-changing Algorithm - Changes the element values
- *   copy, move, transform, swap, fill, replace, remove, insert
+ *   copy, move, transform, swap, fill, replace, remove, unique, insert
  */
 
 vector<int> vec = {9,60,70,8,45,87,90};     // 7 items
@@ -136,7 +136,7 @@ replace_copy(vec.begin(), vec.end(),  // Source
 
 
 
-// 7. Remove
+// 7. Remove (MIND ERASE_REMOVE IDIOM, JUST REMOVE WON'T WORK IN CASE OF VECTORS)
 remove(vec.begin(), vec.end(), 3);   // Remove all 3's
 remove_if(vec.begin(), vec.end(), [](int x){return x>80;});  
 	 // Remove items bigger than 80
@@ -147,6 +147,15 @@ remove_copy(vec.begin(), vec.end(),  // Source
    // Remove all 6's, and copy the remain items to vec2
    // Generalized form: remove_copy_if()
 
+//NOTE: Remove doesn't technically remove elements from a vector,
+//It simply moves the elements not being removed to the front of the container, leaving the contents at the end of the container undefined 
+//(sometimes not even undefined but the actual element that was to be removed!)
+
+//USE Erase-Remove Idiom to remove the elements and free the space as well
+vec.erase(remove(vec.begin(), vec.end(), item), vec.end());
+
+
+// 8. Unique
 unique(vec.begin(), vec.end());   // Remove consecutive equal elements
 
 unique(vec.begin(), vec.end(), less<int>());   
@@ -158,7 +167,7 @@ unique_copy(vec.begin(), vec.end(), vec2.begin());
 	
 
 
-// 8. Insert
+// 9. Insert
 vector<int> a {0,1,2,3,4};
 vector<int> b {5,6,7,8,9};
 a.insert(a.end(), b.begin(), b.end());
