@@ -4,6 +4,13 @@
 
 #Temporary placeholders
 *.swp
+*test.*
+*test
+
+#Log Files
+geckodriver.log
+
+#Archive (No longer used)
 test
 testleetcode
 test2
@@ -48,6 +55,3 @@ B_input
 C_input
 D_input
 E_input
-
-#Log Files
-geckodriver.log
