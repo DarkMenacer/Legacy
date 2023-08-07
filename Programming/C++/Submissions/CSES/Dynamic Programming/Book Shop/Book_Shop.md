@@ -24,7 +24,7 @@ This was the bottom-up approach. To implement this using top-down approach
 Memoization table is constructed with budget (starting from 0 to total budget) as columns and specific book index as rows.
 For entry of the table $\text{memoize}[i][j]$ represents max pages that can be bought using $j$ budget and using (first) $i$ books (uptil $i$ index).
 So 
-$$\text{memoize}[i][j] = max(\text{memoize}[i-1][j], pages[i] + \text{memoize}[i-1][j-price[i-1]]) $$
+$$\text{memoize}[i][j] = max(\text{memoize}[i-1][j], pages[i] + \text{memoize}[i-1][j-price[i]]) $$
 
 Here the first term of max, represents the case where the new added book is not chosen and
 the second term represents the case where it is chosen (additionally if there is any more books that can be bought using leftover).
