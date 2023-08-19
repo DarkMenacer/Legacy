@@ -9,9 +9,9 @@
 ## Solution in brief
 
 This is a classic graph problem. There are 3 approaches to solve this problem (all not as efficient).
-1. [Bellman-Ford Algorithm](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Notable%20Algorithms/Bellman_Ford.cpp)
-2. Floyd-Warshall Algorithm
-3. [Djikstra's Algorithm](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Notable%20Algorithms/Dijstrka.cpp)
+1. [Bellman-Ford Algorithm](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Bellman%20Ford/Bellman_Ford.md)
+2. [Floyd-Warshall Algorithm](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Floyd%20Warshall/Floyd_Warshall.md)
+3. [Djikstra's Algorithm](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Dijstrka/Dijstrka.md)
 
 Djikstra's Algorithm is the most efficient for large graphs hence this one is used for this particular problem.
 

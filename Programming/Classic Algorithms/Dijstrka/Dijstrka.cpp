@@ -1,26 +1,3 @@
-/*
-	Pranav Chatur
-	Dijkstra Algorithm to find the shortest distance from the vertex 1 to all other vertices
-	25 July 2023
-
-    input:
-	6 8
-	1 2 2
-	1 3 5
-	2 4 1
-	2 6 3
-	2 5 1
-	4 3 1
-	4 6 3
-	6 5 1
-
-	where there are 6 vertices and 8 edges and all subsequent lines are the directed edges {a, b, c} 
-		where a is source, b is destination and c is the weight
-
-	output:
-	0 2 4 3 3 5
-
-*/
 #include <iostream>
 #include <vector>
 #include <queue>
