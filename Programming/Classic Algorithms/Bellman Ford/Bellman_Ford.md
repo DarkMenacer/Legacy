@@ -3,7 +3,7 @@
 - History (in a line):- First proposed by Alfonso Shimbel (1955), but is instead named after Richard Bellman and Lester Ford Jr., who published it in 1958 and 1956, respectively
 - Date implemented (by me):- 23 July 2023
 - Type of problem it solves:- Finding Optimal(Min/Max) distance in a graph
-- Alternatives:- [Dijstrka](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Dijstra/Dijstrka.md), [Floyd-Warshall](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Floyd%20Warshall/Floyd_Warshall.md)
+- Alternatives:- [Dijstrka](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Dijstrka/Dijstrka.md), [Floyd-Warshall](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Floyd%20Warshall/Floyd_Warshall.md)
 - Complexity:- $O(|E|^2)$
 
 ---
