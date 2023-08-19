@@ -3,7 +3,7 @@
 - History (in a line):- An example of dynamic programming, and was published in its currently recognized form by Robert Floyd in 1962
 - Date implemented (by me):- 12 August 2023
 - Type of problem it solves: Process shortest path queries from any vertex to any other vertex
-- Alternatives:- [Dijstrka](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Dijstra/Dijstrka.md), [Bellman Ford](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Bellman%20Ford/Bellman_Ford.md)
+- Alternatives:- [Dijstrka](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Dijstrka/Dijstrka.md), [Bellman Ford](https://github.com/DarkMenacer/Legacy/tree/main/Programming/Classic%20Algorithms/Bellman%20Ford/Bellman_Ford.md)
 - Complexity:- $O(n^3)$
 
 ---
