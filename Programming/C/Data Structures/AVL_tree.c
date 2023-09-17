@@ -5,8 +5,8 @@
             2) no menu but friendly function names
     
     FUNCTIONS CODED:
-            1) in_order transverse          8) rotate_right
-            2) parent_of                    9) rotate_left
+            1) inorder traverse            8) rotate_right
+            2) pre_order traverse		    9) rotate_left
             3) find_height                  10) rotation
             4) modify_balancefactor         11) find_path
             5) find_critical                12) search 
@@ -37,25 +37,18 @@ struct node{
     struct node *right;
 };
 
-void in_order_transverse(struct node *root){
+void inorder(struct node *root){
     if(root == NULL){return;}
-    in_order_transverse(root->left);
+    inorder(root->left);
     printf("%d ",root->data);
-    in_order_transverse(root->right);
+    inorder(root->right);
 }
 
-void parent_of(int x, struct node *root, struct node **parent){
+void preorder(struct node *root){
     if(root == NULL){return;}
-    if(root->right== NULL && root->left == NULL){printf("Value doesn't exist\n");return;}
-    *parent = root;
-    if(root->left != NULL && x<=root->left->data){
-        if(x<root->left->data){parent_of(x,root->left,parent);}
-        return;
-    }
-    else if(root->right != NULL && x>=root->right->data){
-        if(x>root->right->data){parent_of(x,root->right,parent);}
-        return;
-    }
+    printf("%d ",root->data);
+    preorder(root->left);
+    preorder(root->right);
 }
 
 int find_height(struct node *root){
@@ -103,76 +96,73 @@ struct node *find_critical(struct node *root){
     return critical;
 }
 
-void rotate_right(struct node **root, struct node **pivot){
-    struct node *mpivot = *pivot, *mroot = *root;
-    mroot->left = mpivot->right;
-    mpivot->right = mroot;
-    *root = mpivot;
-    printf("right rotated subtree: ");in_order_transverse(*root);nl;
+void rotate_right(struct node **critical){
+	struct node *rotator = *critical;
+	struct node *pivot = rotator->left;
+	struct node *temp = pivot->right;
+	pivot->right = rotator;
+	rotator->left = temp;
+	*critical = pivot;
 }
 
-void rotate_left(struct node **root, struct node **pivot){
-    struct node *mpivot = *pivot, *mroot = *root;
-    mroot->right = mpivot->left;
-    mpivot->left = mroot;
-    *root = mpivot;
-    printf("left rotated subtree: ");in_order_transverse(*root);nl;
+void rotate_left(struct node **critical){
+	struct node *rotator = *critical;
+	struct node *pivot = rotator->right;
+	struct node *temp = pivot->left;
+	pivot->left = rotator;
+	rotator->right = temp;
+	*critical = pivot;
 }
 
-void rotation(struct node **root, int x){
-    struct node *mroot = *root;
-     if(x<mroot->data){
-        if(x>mroot->left->data){rotate_left(&mroot->left,&mroot->left->right);}
-        rotate_right(&mroot,&mroot->left);
-    }
-    else{
-        if(x<mroot->right->data){rotate_right(&mroot->right,&mroot->right->left);}
-        rotate_left(&mroot,&mroot->right);
-    }
-    *root = mroot;
+void rotation(struct node **critical){
+	struct node *rotator = *critical;
+	if(rotator->balance_factor == 2){
+		if(rotator->left->right != NULL){rotate_left(&(rotator->left));}
+		rotate_right(&rotator);
+	}
+	else{
+		if(rotator->right->left != NULL){rotate_right(&(rotator->right));}
+		rotate_left(&rotator);
+	}
+	*critical = rotator;
 }
 
-struct node *create(struct node **root,int x){
-    if(*root == 0){
-        struct node *new = (struct node *)malloc(sizeof(struct node));
-        new->data = x;
-        new->left = NULL;
-        new->right = NULL;
-        new->balance_factor = 0;
-        *root = new;
-        return new;
-    }
-    else{
-        struct node *parent = *root, *creator;
-        if(x==parent->data){printf("Illegal to input same number twice\nProgram exits");exit(0);}
-        if(x<parent->data){creator = create(&parent->left,x);}
-        else{creator = create(&parent->right,x);}
-        modify_bf(root);
+struct node *create(struct node **root, int x){
+	if(*root == NULL){
+		struct node *creator = (struct node *)malloc(sizeof(struct node));
+		creator->data = x;
+		creator->left = NULL;
+		creator->right = NULL;
+		creator->balance_factor = 0;
+		*root = creator;
+		return creator;
+	}
+	else{
+		struct node *creator = *root;
+		if(x > creator->data){creator->right = create(&creator->right, x);}
+		else if(x == creator->data){printf("Duplicate value detected, exit protocol activated..."); exit(0);}
+		else {creator->left = create(&creator->left, x);}
+		*root = creator;
+		modify_bf(root);
 
-        struct node *critical = find_critical(*root), *og_critical = critical;
-        if(critical == NULL){return creator;}
-        rotation(&critical,creator->data);
-
-        struct node *final = *root, *fparent = NULL;
-        if(og_critical != final){parent_of(og_critical->data,final,&fparent);}
-        if(fparent == NULL){final = critical;}
-        else if(fparent->left == og_critical){fparent->left = critical;}
-        else{fparent->right = critical;}
-        *root = final;
-        modify_bf(root);
-        return creator;
-    }
+		struct node *critical = find_critical(*root);
+		if(critical == NULL){return *root;}
+		rotation(&critical);
+		*root = critical;
+		modify_bf(root);
+		return *root;
+	}
 }
 
-void path_ii(struct node *root,int x){
+void path_printer(struct node *root,int x){
     if(root == NULL){printf("\nErr,NODE NOT FOUND\n");return;}
     if(x==root->data){return;}
-    if(x<root->data){printf("Left "); path_ii(root->left,x);}
-    if(x>root->data){printf("Right "); path_ii(root->right,x);}
+    if(x<root->data){printf("Left "); path_printer(root->left,x);}
+    if(x>root->data){printf("Right "); path_printer(root->right,x);}
 }
 void find_path(struct node *root,int x){
     printf("Number %d present at: ",x);
-    path_ii(root,x);
+    path_printer(root,x);
     printf("from the root");
 }
 
@@ -190,11 +180,11 @@ void search(struct node *root, int x, struct node **parent, struct node **here){
     if(root->right== NULL && root->left == NULL){printf("Value doesn't exist\n");return;}
     *parent = root;
     if(!(root->right== NULL || root->left == NULL)){
-        if(root->right->data == x || root->left->data == x){
-            *here = (root->left->data == x)? root->left: root->right;
-            return;
-            }
-        }
+		if(root->right->data == x || root->left->data == x){
+			*here = (root->left->data == x)? root->left: root->right;
+			return;
+		}
+	}
     else{*here = (root->right == NULL)?root->left:root->right; return;}
     if(x > root->data){search(root->right,x,parent,here);}
     else{search(root->left,x,parent,here);}
@@ -204,12 +194,12 @@ void adjust_deletion(struct node **root){
     struct node *adjuster = *root, *critical = find_critical(adjuster);
     if(critical == NULL){return;}
     if(critical->balance_factor > 0){
-        if(critical->left->balance_factor == -1){rotate_left(&critical->left,&critical->left->right);}
-        rotate_right(&critical,&critical->left);
+        if(critical->left->balance_factor == -1){rotate_left(&critical->left);}
+        rotate_right(&critical);
     }
     else{
-        if(critical->right->balance_factor == -1){rotate_right(&critical->left,&critical->right->left);}
-        rotate_left(&critical,&critical->right);
+        if(critical->right->balance_factor == -1){rotate_right(&critical->left);}
+        rotate_left(&critical);
     }
     *root = adjuster;
 }
@@ -233,15 +223,15 @@ struct node *delete(struct node *root, int x){
             else{parent_of_deletor->right = deletor->left;}
         }
         else{
-            struct node *in_order_successor = smallest_in(deletor->right), *parent_of_in_order_successor = NULL;
-            struct node *connecter = highest_in(in_order_successor);
-            search(root,in_order_successor->data, &parent_of_in_order_successor,&in_order_successor);
-            if(parent_of_in_order_successor->right == in_order_successor){parent_of_in_order_successor->right = NULL;}
-            else{parent_of_in_order_successor->left = NULL;}
-            if(parent_of_deletor->right == deletor){parent_of_deletor->right = in_order_successor;}
-            else{parent_of_deletor->left = in_order_successor;} 
+            struct node *inorder_successor = smallest_in(deletor->right), *parent_of_inorder_successor = NULL;
+            struct node *connecter = highest_in(inorder_successor);
+            search(root,inorder_successor->data, &parent_of_inorder_successor,&inorder_successor);
+            if(parent_of_inorder_successor->right == inorder_successor){parent_of_inorder_successor->right = NULL;}
+            else{parent_of_inorder_successor->left = NULL;}
+            if(parent_of_deletor->right == deletor){parent_of_deletor->right = inorder_successor;}
+            else{parent_of_deletor->left = inorder_successor;} 
             if(deletor->right != connecter){connecter->right = deletor->right;}
-            if(deletor->left != connecter){in_order_successor->left = deletor->left;}
+            if(deletor->left != connecter){inorder_successor->left = deletor->left;}
         }
     }
     free(deletor);
@@ -263,8 +253,8 @@ int main(){
     struct node N8 = *create(&root,11);
     struct node N9 = *create(&root,12);
     struct node N10 = *create(&root,15);
-    in_order_transverse(root);nl;
+    inorder(root);nl;
     root = delete(root,7);
-    in_order_transverse(root);nl;
+    inorder(root);nl;
     return 0;
 }

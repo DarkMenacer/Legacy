@@ -2,6 +2,12 @@
 .vscode
 .DS_Store
 
+#Folders
+node_modules/
+dist/
+build/
+.mscbackup/
+
 #Temporary placeholders
 *.swp
 *test.*
