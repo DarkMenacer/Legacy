@@ -1,69 +1,35 @@
-/*
-Name:-              Apartments
-Platform:-          CSES
-Date:-              3 January 2022
-Type of Problem:-   Sorting and Searching
-Complexity:-        O(nlogn) 
-Status:-            Solved
-
-Solution in brief:
-2 multisets, 'apartments' and 'applicants' are created. 
-For each element in applicants, elements in apartments are checked from the beginning.
-Let e(apartments) denote current element of apartments
-If e(applicants) - e(apartments) > k, then e(apartments) is removed from apartments.
-Else if e(applicants) - e(apartments) < -k, next element of applicants is checked, i.e. e(applicants) occupies no room.
-Else e(applicants) occupies e(apartments), and e(apartments) is removed from apartments.
-
-Sample to understand solution:
-Input:-
-10 10 10
-90 41 20 39 49 21 35 31 74 86
-14 24 24 7 82 85 82 4 60 95
-
-Output:-
-6
-*/
-
+#include <algorithm>
 #include <iostream>
-#include <set>
-#include <iterator>
-#define FOR(i,start,upper_limit) for(i=start;i!=upper_limit;++i)
+#include <deque>
+#define free_cin_cout cin.sync_with_stdio(false); cout.sync_with_stdio(false)
+#define fastIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define take_loop_input_in(name, size) for(int i = 0; i < size; ++i){cin>>name[i];}
 using namespace std;
 
-int give_me_answer(int k, multiset<int> applicants, multiset<int> apartments){
-    multiset<int>::iterator itr1, itr2;
-    int answer = 0;
-    FOR(itr1,applicants.begin(),applicants.end()){
-        itr2 = apartments.begin();
-        while(itr2 != apartments.end()){
-            if(*itr1 - *itr2 > k){itr2 = apartments.erase(itr2);}
-            else if(*itr1 - *itr2 < -k){break;} 
-            else{
-                ++answer;
-                itr2 = apartments.erase(itr2);
-                break;
-            }
-        }
-    }
-    return answer;
-}
-
 int main(){
-    int n,m,k;
-    cin>>n;
-    cin>>m;
-    cin>>k;
-    int i,x;
-    multiset<int> applicants, apartments;
-    FOR(i,0,n){
-        cin>>x;
-        applicants.insert(x);
-    }
-    FOR(i,0,m){
-        cin>>x;
-        apartments.insert(x);
-    }
-    cout<<give_me_answer(k,applicants,apartments);
-
-    return 0;
+	free_cin_cout; fastIO;
+	unsigned n, m, k, i = 0, settled_applicants = 0;
+	cin>>n>>m>>k;
+	deque<int> applicants(n, 0), apartments(m, 0);
+	take_loop_input_in(applicants, n);
+	take_loop_input_in(apartments, m);
+	sort(applicants.begin(), applicants.end());
+	sort(apartments.begin(), apartments.end());
+	while(i < applicants.size() && i < apartments.size()){
+		if(abs(apartments[i]-applicants[i]) <= k){
+			settled_applicants++;
+			apartments.pop_front();
+			applicants.pop_front();
+		}
+		else {
+			if(applicants[i] > apartments[i]){
+				apartments.pop_front();
+			}
+			else {
+				applicants.pop_front();
+			}
+		}
+	}
+	cout<<settled_applicants;
+	return 0;
 }

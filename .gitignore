@@ -1,4 +1,4 @@
-#Editor config files 
+#Editor config files
 .vscode
 .DS_Store
 
@@ -12,9 +12,12 @@ build/
 *.swp
 *test.*
 *test
+*input.*
+*output.*
 
 #Log Files
 geckodriver.log
+tags
 
 #Archive (No longer used)
 test

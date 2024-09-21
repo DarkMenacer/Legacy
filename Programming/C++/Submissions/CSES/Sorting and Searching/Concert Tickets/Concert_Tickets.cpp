@@ -1,30 +1,36 @@
 #include <iostream>
-#include <set>
-#include <vector>
 #include <iterator>
+#include <set>
+#define nl cout<<'\n'
+#define free_cin_cout cin.sync_with_stdio(false); cout.sync_with_stdio(false)
+#define fastIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 using namespace std;
-#define FOR(i,start,upper_limit) for(i=start;i<upper_limit;++i)
- 
-void prints_answer(multiset<int> tickets, vector<int> customers){
-    multiset<int>::iterator tic;
-    vector<int>::iterator cus;
-    FOR(cus,customers.begin(),customers.end()){
-        tic = tickets.begin();
-        if(*cus < *tic || tic == tickets.end()){cout<<-1<<"\n";continue;}
-        tic = tickets.upper_bound(*cus);
-        --tic;
-        cout<<*tic<<"\n";
-        tickets.erase(tic);
-    }
-}
- 
+
 int main(){
-    int n,m,i,x;
-    cin>>n>>m;
-    vector<int> customers;
-    multiset<int> tickets;
-    FOR(i,0,n){cin>>x;tickets.insert(x);}
-    FOR(i,0,m){cin>>x;customers.push_back(x);}
-    prints_answer(tickets,customers);
-    return 0;
+	free_cin_cout; fastIO;
+	int n, m, x;
+	cin>>n>>m;
+	multiset<int> tickets;
+	while(n--){
+		cin>>x;
+		tickets.insert(x);
+	}
+	while(m--){
+		cin>>x;
+		set<int>::iterator placer = tickets.lower_bound(x);
+		if(x == *placer){
+			cout<<*placer;
+			tickets.erase(placer);
+		}
+		else if(placer == tickets.begin()){
+			cout<< -1;
+		}
+		else{
+			--placer;
+			cout<<*placer;
+			tickets.erase(placer);
+		}
+		nl;
+	}
+	return 0;
 }

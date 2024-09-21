@@ -4,15 +4,16 @@
 - Date:-    3 January 2022
 - Type of Problem:- Sorting
 - Status:- Solved
-#### Complexity:- O(n log(n)) 
+#### Complexity:- O(n log(n))
 ---
 ## Solution in brief
-2 multisets, 'apartments' and 'applicants' are created. 
+2 deques, 'apartments' and 'applicants' are created and then sorted.
 For each element in applicants, elements in apartments are checked from the beginning.
 Let e(apartments) denote current element of apartments
-If e(applicants) - e(apartments) > k, then e(apartments) is removed from apartments.
-Else if e(applicants) - e(apartments) < -k, next element of applicants is checked, i.e. e(applicants) occupies no room.
-Else e(applicants) occupies e(apartments), and e(apartments) is removed from apartments.
+If | e(applicants) - e(apartments) | < k, then e(applicants) occupies e(apartments), and e(apartments) is removed from apartments
+Else
+	if e(applicants) > e(apartments) , then e(apartments) is removed from apartments, i.e. no one occupies e(apartments).
+	Else next element of applicants is checked, i.e. no room available for e(applicants).
 
 ## Sample to understand the solution
 
@@ -32,7 +33,7 @@ Apartments: 4 7 14 24 24 60 82 82 85 95 (sorted)
 Iterating over applicants, \
 1st and 2nd apartments eliminated, as less than (20-10)\
 3rd apartment allotted to applicant 1 and we go on to next applicant\
-This continues for all applicants 
+This continues for all applicants
 
 
 ---

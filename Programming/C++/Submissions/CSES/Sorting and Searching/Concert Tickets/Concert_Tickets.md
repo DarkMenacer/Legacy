@@ -1,6 +1,6 @@
 # Concert Tickets
 ## Program Info
-- Platform/Source:-     CSES Sorting and Searching 
+- Platform/Source:-     CSES Sorting and Searching
 - Date:-                24 January 2022
 - Type of Problem:-     Sorting and Searching (Bounds)
 - Status:-              Solved
@@ -8,13 +8,12 @@
 ---
 ## Solution in brief
 
-2 vectors, 'tickets' and 'customers' are created, only tickets is sorted, as order matters for customers for output.\
-For each customer, an iterator 'tic' is always initiated at tickets.begin().
+All the tickets are stored in a multiset, called 'tickets'. For each incoming customer, the lower\_bound iterator in the multiset is checked:
 
-If customer's max price is smaller than smallest ticket price (&tickets.begin()) OR tickets is empty\
-    then '-1' printed & next customer is checked.\
-Else, tic is incremented till *tic is greater than the customer's max price.\
-tic is then decremented once, *tic is printed and the ticket is removed (tic is erased from tickets).
+- If the lower\_bound iterator points to the exact value customer is willing to pay, then the value is printed and iterator is erased.
+- Else if the lower\_bound points to the first ticket in the multiset (i.e. tickets.begin()), then -1 has to be printed as no ticket exists as small as the maximum value the customer is willing to pay.
+- Else, the lower\_bound is first decremented (to find the ticket that is just smaller than the price customer is willing to pay), then the value is printed and iterator erased.
+
 
 ## Sample to understand the solution
 

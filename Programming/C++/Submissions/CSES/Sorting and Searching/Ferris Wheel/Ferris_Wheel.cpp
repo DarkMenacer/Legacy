@@ -1,39 +1,27 @@
-#include <iostream>
 #include <algorithm>
-#include <vector>
+#include <iostream>
 #include <iterator>
-#define FOR(i,start,upper_limit) for(i=start;i<upper_limit;++i)
+#include <vector>
+#define all(name) name.begin(), name.end()
+#define free_cin_cout cin.sync_with_stdio(false); cout.sync_with_stdio(false)
+#define fastIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define take_loop_input_in(name, size) for(unsigned i = 0; i < size; ++i){cin>>name[i];}
 using namespace std;
 
-int give_me_answer(int x, vector<int> input){
-    int answer = input.size();
-    vector<int>::iterator itr;
-    vector<int>::reverse_iterator ritr;
-    itr = input.begin();
-    ritr = input.rbegin();
-    while(1){
-        if(distance(itr,ritr.base())<=1 || *itr > x/2 || *ritr < x/2){
-            if(*ritr < x/2){answer-=(distance(itr,ritr.base())/2);}
-            break;
-        }
-        if(*itr + *ritr <= x){
-            --answer;
-            ++itr;
-        }
-        ++ritr;
-    }
-    return answer;
-}
-
 int main(){
-    vector<int> input;
-    int n,x,i,p;
-    cin>>n>>x;
-    FOR(i,0,n){
-        cin>>p;
-        input.push_back(p);
-    }
-    sort(input.begin(),input.end());
-    cout<<give_me_answer(x,input);
-    return 0;
+	free_cin_cout; fastIO;
+	unsigned n, x, no_of_gandolas = 0;
+	cin>>n>>x;
+	vector<unsigned> children(n, 0);
+	take_loop_input_in(children, n);
+	sort(all(children));
+	vector<unsigned>:: iterator itr = children.begin();
+	vector<unsigned>:: reverse_iterator ritr = children.rbegin();
+	while(itr <= ritr.base()-1){
+		if(*itr+*ritr <= x){++itr;}
+		++ritr;
+		no_of_gandolas++;
+	}
+	cout<<no_of_gandolas;
+	return 0;
 }

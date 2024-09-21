@@ -1,3 +1,15 @@
+#include <vector>
+#include <deque>
+#include <string>
+#include <list>
+#include <set>   // set and multiset
+#include <map>   // map and multimap
+#include <unordered_set>  // unordered set/multiset
+#include <unordered_map>  // unordered map/multimap
+#include <iterator>
+#include <algorithm>
+#include <numeric>    // some numeric algorithm
+#include <functional>
 /*
  * STL: Standard Template Library
  *   -- Data Structures and Algorithms
@@ -28,17 +40,6 @@ sort(itr1, itr2);  // vec: {1, 4, 8}
  * STL Headers
  */
 
-#include <vector>
-#include <deque>
-#include <list>
-#include <set>   // set and multiset
-#include <map>   // map and multimap
-#include <unordered_set>  // unordered set/multiset
-#include <unordered_map>  // unordered map/multimap
-#include <iterator>
-#include <algorithm>
-#include <numeric>    // some numeric algorithm
-#include <functional>
 
 
 
@@ -72,7 +73,7 @@ for (int i; i < vec.size(); i++) {
    cout << vec[i] << " ";
 
 for (list<int>::iterator itr = vec.begin(); itr!= vec.end(); ++itr)
-   cout << *itr << " ";  
+   cout << *itr << " ";
 
 for (it: vec)    // C++ 11
    cout << it << " ";
@@ -150,13 +151,13 @@ cout << deq[1];  // 4
  * list
  *  -- double linked list
  */
-list<int> mylist = {5, 2, 9 }; 
+list<int> mylist = {5, 2, 9 };
 mylist.push_back(6);  // mylist: { 5, 2, 9, 6}
 mylist.push_front(4); // mylist: { 4, 5, 2, 9, 6}
 
-   
+
 list<int>::iterator itr = find(mylist.begin(), mylist.end(), 2); // itr -> 2
-mylist.insert(itr, 8);   // mylist: {4, 5, 8, 2, 9, 6}  
+mylist.insert(itr, 8);   // mylist: {4, 5, 8, 2, 9, 6}
                          // O(1), faster than vector/deque
 itr++;                   // itr -> 9
 mylist.erase(itr);       // mylist: {4, 8, 5, 2, 6}   O(1)
@@ -209,7 +210,7 @@ mylist1.splice(itr, mylist2, itr_a, itr_b );   // O(1)
                   // Sequence containers don't even have find() member function
   pair<set<int>::iterator, bool> ret;
   ret = myset.insert(3);  // no new element inserted
-  if (ret.second==false) 
+  if (ret.second==false)
      it=ret.first;       // "it" now points to element 3
 
   myset.insert(it, 9);  // myset:  {1, 3, 7, 9}   O(log(n)) => O(1)
@@ -247,7 +248,7 @@ multiset<int> myset;
 
 /*
  * map
- * 
+ *
  * - No duplicated key
  */
 map<char,int> mymap;
@@ -273,7 +274,7 @@ for ( it=mymap.begin() ; it != mymap.end(); it++ )
 // multimap is a map that allows duplicated keys
 multimap<char,int> mymap;
 
-// map/multimap: 
+// map/multimap:
 //  -- keys cannot be modified
 //     type of *it:   pair<const char, int>
      (*it).first = 'd';  // Error
@@ -307,7 +308,7 @@ multimap<char,int> mymap;
  *  Unordered Container (C++ 11)
  *   - Unordered set and multiset
  *   - Unordered map and multimap
- 
+
  *  Order not defined, and may change overtime
  *
  *  Default hash function defined for fundamental types and string.
@@ -321,7 +322,7 @@ multimap<char,int> mymap;
  */
   unordered_set<string> myset = { "red","green","blue" };
   unordered_set<string>::const_iterator itr = myset.find ("green"); // O(1)
-  if (itr != myset.end())   // Important check 
+  if (itr != myset.end())   // Important check
      cout << *itr << endl;
   myset.insert("yellow");  // O(1)
 
@@ -434,7 +435,7 @@ foo(day);
 
 
 
-//Notes about Associative Array: 
+//Notes about Associative Array:
 //1. Search time: unordered_map, O(1); map, O(log(n));
 //2. Unordered_map may degrade to O(n);
 //3. Can't use multimap and unordered_multimap, they don't have [] operator.
@@ -481,7 +482,7 @@ array<int, 4> b = {3, 4, 5};
  *
  *  1. stack:  LIFO, push(), pop(), top()
  *
- *  2. queue:  FIFO, push(), pop(), front(), back() 
+ *  2. queue:  FIFO, push(), pop(), front(), back()
  *
  *  3. priority queue: first item always has the greatest priority
  *                   push(), pop(), top()
@@ -523,7 +524,7 @@ array<int, 4> b = {3, 4, 5};
 // 1. Random Access Iterator:  vector, deque, array
 vector<int> itr;
 itr = itr + 5;  // advance itr by 5
-itr = itr - 4;  
+itr = itr - 4;
 if (itr2 > itr1) ...
 ++itr;   // faster than itr++
 --itr;
@@ -621,13 +622,13 @@ copy(vec1.begin(),vec1.end(),  // source
 
 // 2. Stream Iterator:
 vector<string> vec4;
-copy(istream_iterator<string>(cin), istream_iterator<string>(), 
+copy(istream_iterator<string>(cin), istream_iterator<string>(),
             back_inserter(vec4));
 
 copy(vec4.begin(), vec4.end(), ostream_iterator<string>(cout, " "));
 
 // Make it terse:
-copy(istream_iterator<string>(cin), istream_iterator<string>(), 
+copy(istream_iterator<string>(cin), istream_iterator<string>(),
             ostream_iterator<string>(cout, " "));
 
 
@@ -659,7 +660,7 @@ for (ritr = vec.rbegin(); ritr != vec.rend(); ritr++)
  * Algorithms
  *   - mostly loops
  */
-vector<int> vec = { 4, 2, 5, 1, 3, 9};   
+vector<int> vec = { 4, 2, 5, 1, 3, 9};
 vector<int>::iterator itr = min_element(vec.begin(), vec.end()); // itr -> 1
 
 // Note 1: Algorithm always process ranges in a half-open way: [begin, end)
@@ -678,7 +679,7 @@ copy(itr, vec.end(),  // Source
 
 // Note 3:
 vector<int> vec3;
-copy(itr, vec.end(), back_inserter(vec3));  // Inserting instead of overwriting 
+copy(itr, vec.end(), back_inserter(vec3));  // Inserting instead of overwriting
                   // back_insert_iterator      Not efficient
 
 vec3.insert(vec3.end(), itr, vec.end());  // Efficient and safe
@@ -692,7 +693,7 @@ bool isOdd(int i) {
 
 int main() {
    vector<int> vec = {2, 4, 5, 9, 2}
-   vector<int>::iterator itr = find_if(vec.begin(), vec.end(), isOdd); 
+   vector<int>::iterator itr = find_if(vec.begin(), vec.end(), isOdd);
    	                             // itr -> 5
 }
 
@@ -723,7 +724,7 @@ sort(arr, arr+4);
 // Vector pitfalls:
 //
 // Reallocate vector
-// Remove items 
+// Remove items
 
 
 
