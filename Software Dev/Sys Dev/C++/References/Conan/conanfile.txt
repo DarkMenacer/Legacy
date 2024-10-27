@@ -1,0 +1,10 @@
+[requires]
+libNameIwantToUse/version
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[options]
+ifYouHaveAny
+
