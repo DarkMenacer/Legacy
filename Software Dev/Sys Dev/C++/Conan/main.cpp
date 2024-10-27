@@ -1,29 +1,13 @@
+#include <boost/lambda/lambda.hpp>
 #include <iostream>
-#include <boost/filesystem.hpp>
+#include <iterator>
+#include <algorithm>
 
-int main(){
-	// boost::filesystem::path filePath{"./CMakeLists.txt"};
+int main()
+{
+    using namespace boost::lambda;
+    typedef std::istream_iterator<int> in;
 
-	// Check if the file exists
-	if(boost::filesystem::exists(filePath)){
-		std::cout<<filePath<<" exists."<<std::endl;
-
-		// Open the file for reading
-		std::ifstream file(filePath.string());
-
-		if(file.is_open()){
-			std::string line;
-			while(std::getline(file, line)){
-				std::cout<<line<<std::endl; // Print each line of the file
-			}
-			file.close();
-		}
-		else{
-			std::cerr<<"Failed to open the file."<<std::endl;
-		}
-	}
-	else{
-		std::cout<<filePath<<" does not exist."<<std::endl;
-	}
+    std::for_each(in(std::cin), in(), std::cout << (_1 * 3) << " " );
 	return 0;
 }
