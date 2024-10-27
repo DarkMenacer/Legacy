@@ -1,10 +1,6 @@
 [requires]
-libNameIwantToUse/version
+boost/1.86.0  # Adjust to the version you need
 
 [generators]
-CMakeDeps
 CMakeToolchain
-
-[options]
-ifYouHaveAny
-
+CMakeDeps
